@@ -27,9 +27,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.GestureDetector;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.ar.core.Anchor;
 import com.google.ar.core.Camera;
@@ -138,6 +145,39 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
             return;
         }
 
+        LayoutInflater inflater = getLayoutInflater();
+        getWindow().addContentView(inflater.inflate(R.layout.navbar, null),
+                new ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.FILL_PARENT,
+                        ViewGroup.LayoutParams.FILL_PARENT));
+
+        TableLayout table = (TableLayout)HelloArActivity.this.findViewById(R.id.stops_list);
+        // Inflate your row "template" and fill out the fields.
+        TableRow row1 = (TableRow)LayoutInflater.from(HelloArActivity.this).inflate(R.layout.itinerary_row, null);
+        ((TextView)row1.findViewById(R.id.venue_name)).setText("Golden Gate Bridge");
+        row1.findViewById(R.id.icon).setBackgroundResource(R.drawable.bluepin);
+        table.addView(row1);
+
+        TableRow strip = (TableRow)LayoutInflater.from(HelloArActivity.this).inflate(R.layout.itinerary_row, null);
+        strip.findViewById(R.id.icon).setBackgroundResource(R.drawable.strip);
+        table.addView(strip);
+
+
+        TableRow row2 = (TableRow)LayoutInflater.from(HelloArActivity.this).inflate(R.layout.itinerary_row, null);
+        ((TextView)row2.findViewById(R.id.venue_name)).setText("Fisherman Wharf");
+        row2.findViewById(R.id.icon).setBackgroundResource(R.drawable.bluepin);
+        table.addView(row2);
+
+        Button toggleButton = HelloArActivity.this.findViewById(R.id.toggleDisplay);
+        toggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(HelloArActivity.this, "blah", Toast.LENGTH_SHORT).show();
+                View stopListView = HelloArActivity.this.findViewById(R.id.stops_list);
+                stopListView.setVisibility(stopListView.getVisibility() == View.INVISIBLE ? View.VISIBLE : View.INVISIBLE);
+            }
+        });
+
         // Create default config and check if supported.
         Config config = new Config(mSession);
         if (!mSession.isSupported(config)) {
@@ -150,39 +190,44 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
         locationScene = new LocationScene(this, this, mSession);
 
         // Image marker at Eiffel Tower
-        LocationMarker eiffelTower =  new LocationMarker(
-                2.2945,
-                48.858222,
-                new ImageRenderer("eiffel.png")
-        );
-        eiffelTower.setOnTouchListener(new Runnable() {
-            @Override
-            public void run() {
-                Toast.makeText(HelloArActivity.this,
-                        "Touched Eiffel Tower", Toast.LENGTH_SHORT).show();
-            }
-        });
-        eiffelTower.setTouchableSize(1000);
-        locationScene.mLocationMarkers.add(
-                eiffelTower
-        );
+//        LocationMarker eiffelTower =  new LocationMarker(
+//                2.2945,
+//                48.858222,
+//                new ImageRenderer("eiffel.png")
+//        );
+//        eiffelTower.setOnTouchListener(new Runnable() {
+//            @Override
+//            public void run() {
+//                Toast.makeText(HelloArActivity.this,
+//                        "Touched Eiffel Tower", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        eiffelTower.setTouchableSize(1000);
+//        locationScene.mLocationMarkers.add(
+//                eiffelTower
+//        );
 
         // Annotation at Buckingham Palace
         locationScene.mLocationMarkers.add(
                 new LocationMarker(
-                        -1.535823,
-                        52.284501,
-                        new AnnotationRenderer("Buckingham Palace")));
+                        -122.06501,
+                        37.39,
+                        new AnnotationRenderer("Silicon Valley 1")));
+
+        locationScene.mLocationMarkers.add(
+                new LocationMarker(
+                        -122.05601,
+                        37.391308,
+                        new AnnotationRenderer("Silicon Valley 2")));
 
         // Example of using your own renderer.
         // Uses a slightly modified version of hello_ar_java's ObjectRenderer
-        locationScene.mLocationMarkers.add(
-                new LocationMarker(
-                        -88.1423098,
-                        34.5498992,
-                        new ObjectRenderer("andy.obj", "andy.png")));
-
-
+//        locationScene.mLocationMarkers.add(
+//                new LocationMarker(
+//                        -88.1423098,
+//                        34.5498992,
+//                        new ObjectRenderer("andy.obj", "andy.png")));
+//
 
         // Correct heading with touching side of screen
         /*mSurfaceView.setOnTouchListener(
@@ -216,7 +261,7 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
             if(locationScene != null)
                 locationScene.resume();
             if (mSession != null) {
-                showLoadingMessage();
+                //showLoadingMessage();
                 // Note that order matters - see the note in onPause(), the reverse applies here.
                 try {
                     mSession.resume();
@@ -440,7 +485,7 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                showSnackbarMessage("Searching for surfaces...", false);
+                showSnackbarMessage("Searching for surfaces...", true);
             }
         });
     }

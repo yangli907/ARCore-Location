@@ -165,7 +165,7 @@ class AnnotationRenderer {
         int distance_font_size = 90;
         int line_stroke = 15;
         int vertical_line_length = 300;
-        int annotation_color = Color.rgb(225, 225, 225);
+        int annotation_color = Color.rgb(188, 242, 131);
         int shadow_color = Color.rgb(190,190,190);
 
 

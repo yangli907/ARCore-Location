@@ -10,11 +10,22 @@
     />
 
     <TextView
+        android:id="@+id/locationIdx"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center"
+        android:background="@drawable/circle"
+        android:gravity="left"
+        android:shadowColor="@android:color/white"
+        android:shadowRadius="5.0"
+        android:textColor="@android:color/black"
+        android:textSize="10dp" />
+
+    <TextView
         android:id="@+id/venue_name"
         android:gravity="left"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:textColor="#12eda4"
-        android:alpha=".65"
         />
 </TableRow>

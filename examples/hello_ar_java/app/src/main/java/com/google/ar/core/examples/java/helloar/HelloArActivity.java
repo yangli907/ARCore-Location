@@ -49,6 +49,7 @@ import com.google.ar.core.Session;
 import com.google.ar.core.Trackable;
 import com.google.ar.core.TrackingState;
 import com.google.ar.core.examples.java.helloar.helpers.TapHelper;
+import com.google.ar.core.examples.java.helloar.model.LocationObject;
 import com.google.ar.core.examples.java.helloar.rendering.BackgroundRenderer;
 import com.google.ar.core.examples.java.helloar.rendering.ObjectRenderer;
 import com.google.ar.core.examples.java.helloar.rendering.ObjectRenderer.BlendMode;
@@ -60,6 +61,7 @@ import com.google.ar.core.exceptions.UnavailableArcoreNotInstalledException;
 import com.google.ar.core.exceptions.UnavailableSdkTooOldException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -94,6 +96,8 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
     private final PointCloudRenderer mPointCloud = new PointCloudRenderer();
     private TapHelper tapHelper;
 
+    private DataProvider dataProvider;
+
     // Temporary matrix allocated here to reduce number of allocations for each frame.
     private final float[] mAnchorMatrix = new float[16];
 
@@ -121,6 +125,8 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
         mSurfaceView.setRenderer(this);
         mSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
 
+        dataProvider = new DataProvider();
+
         Exception exception = null;
         String message = null;
         try {
@@ -145,39 +151,6 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
             return;
         }
 
-        LayoutInflater inflater = getLayoutInflater();
-        getWindow().addContentView(inflater.inflate(R.layout.navbar, null),
-                new ViewGroup.LayoutParams(
-                        ViewGroup.LayoutParams.FILL_PARENT,
-                        ViewGroup.LayoutParams.FILL_PARENT));
-
-        TableLayout table = (TableLayout)HelloArActivity.this.findViewById(R.id.stops_list);
-        // Inflate your row "template" and fill out the fields.
-        TableRow row1 = (TableRow)LayoutInflater.from(HelloArActivity.this).inflate(R.layout.itinerary_row, null);
-        ((TextView)row1.findViewById(R.id.venue_name)).setText("Golden Gate Bridge");
-        row1.findViewById(R.id.icon).setBackgroundResource(R.drawable.bluepin);
-        table.addView(row1);
-
-        TableRow strip = (TableRow)LayoutInflater.from(HelloArActivity.this).inflate(R.layout.itinerary_row, null);
-        strip.findViewById(R.id.icon).setBackgroundResource(R.drawable.strip);
-        table.addView(strip);
-
-
-        TableRow row2 = (TableRow)LayoutInflater.from(HelloArActivity.this).inflate(R.layout.itinerary_row, null);
-        ((TextView)row2.findViewById(R.id.venue_name)).setText("Fisherman Wharf");
-        row2.findViewById(R.id.icon).setBackgroundResource(R.drawable.bluepin);
-        table.addView(row2);
-
-        Button toggleButton = HelloArActivity.this.findViewById(R.id.toggleDisplay);
-        toggleButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(HelloArActivity.this, "blah", Toast.LENGTH_SHORT).show();
-                View stopListView = HelloArActivity.this.findViewById(R.id.stops_list);
-                stopListView.setVisibility(stopListView.getVisibility() == View.INVISIBLE ? View.VISIBLE : View.INVISIBLE);
-            }
-        });
-
         // Create default config and check if supported.
         Config config = new Config(mSession);
         if (!mSession.isSupported(config)) {
@@ -188,6 +161,52 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
 
         // Set up our location scene
         locationScene = new LocationScene(this, this, mSession);
+
+        // ------------- yli started -----------------------
+
+        LayoutInflater inflater = getLayoutInflater();
+        getWindow().addContentView(inflater.inflate(R.layout.navbar, null),
+                new ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.FILL_PARENT,
+                        ViewGroup.LayoutParams.FILL_PARENT));
+
+        TableLayout table = (TableLayout)HelloArActivity.this.findViewById(R.id.stops_list);
+
+        List<LocationObject> locations = dataProvider.getLocationData();
+        for (int i = 0; i < locations.size(); i++) {
+            LocationObject location = locations.get(i);
+            int idx = i + 1;
+
+            TableRow row = (TableRow)LayoutInflater.from(HelloArActivity.this).inflate(R.layout.itinerary_row, null);
+            ((TextView)row.findViewById(R.id.venue_name)).setText(location.getName());
+            ((TextView)row.findViewById(R.id.locationIdx)).setText(String.valueOf(idx));
+//            row.findViewById(R.id.icon).setBackgroundResource(R.drawable.bluepin);
+            table.addView(row);
+
+            if (i != locations.size() - 1) {
+                TableRow connectingRow = (TableRow)LayoutInflater.from(HelloArActivity.this).inflate(R.layout.itinerary_row, null);
+                connectingRow.findViewById(R.id.icon).setBackgroundResource(R.drawable.downarrow);
+                table.addView(connectingRow);
+            }
+
+            locationScene.mLocationMarkers.add(
+                    new LocationMarker(
+                            location.getLon(),
+                            location.getLat(),
+                            new AnnotationRenderer(String.valueOf(idx))));
+        }
+
+        Button toggleButton = HelloArActivity.this.findViewById(R.id.toggleDisplay);
+        toggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(HelloArActivity.this, "blah", Toast.LENGTH_SHORT).show();
+                View stopListView = HelloArActivity.this.findViewById(R.id.stops_list_holder);
+                stopListView.setVisibility(stopListView.getVisibility() == View.INVISIBLE ? View.VISIBLE : View.INVISIBLE);
+            }
+        });
+
+        // ------------- yli end -----------------------
 
         // Image marker at Eiffel Tower
 //        LocationMarker eiffelTower =  new LocationMarker(
@@ -206,19 +225,6 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
 //        locationScene.mLocationMarkers.add(
 //                eiffelTower
 //        );
-
-        // Annotation at Buckingham Palace
-        locationScene.mLocationMarkers.add(
-                new LocationMarker(
-                        -122.06501,
-                        37.39,
-                        new AnnotationRenderer("Silicon Valley 1")));
-
-        locationScene.mLocationMarkers.add(
-                new LocationMarker(
-                        -122.05601,
-                        37.391308,
-                        new AnnotationRenderer("Silicon Valley 2")));
 
         // Example of using your own renderer.
         // Uses a slightly modified version of hello_ar_java's ObjectRenderer

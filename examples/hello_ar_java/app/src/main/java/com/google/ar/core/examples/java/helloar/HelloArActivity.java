@@ -414,11 +414,12 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
             float[] viewmtx = new float[16];
             camera.getViewMatrix(viewmtx, 0);
 
+            // commented by yli - start
             // Compute lighting from average intensity of the image.
-            final float lightIntensity = frame.getLightEstimate().getPixelIntensity();
+//            final float lightIntensity = frame.getLightEstimate().getPixelIntensity();
 
             // Visualize tracked points.
-            PointCloud pointCloud = frame.acquirePointCloud();
+/*            PointCloud pointCloud = frame.acquirePointCloud();
             mPointCloud.update(pointCloud);
             mPointCloud.draw(viewmtx, projmtx);
 
@@ -435,10 +436,10 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
                         break;
                     }
                 }
-            }
+            }*/
 
             // Visualize planes.
-            mPlaneRenderer.drawPlanes(
+/*            mPlaneRenderer.drawPlanes(
                 mSession.getAllTrackables(Plane.class), camera.getDisplayOrientedPose(), projmtx);
 
             // Visualize anchors created by touch.
@@ -451,8 +452,8 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
                 // during calls to session.update() as ARCore refines its estimate of the world.
                 anchor.getPose().toMatrix(mAnchorMatrix, 0);
 
-            }
-
+            }*/
+            // commented by yli - end
 
 
         } catch (Throwable t) {

@@ -1,31 +1,44 @@
 package com.google.ar.core.examples.java.helloar;
 
-import android.os.AsyncTask;
-import android.widget.Toast;
-
 import com.google.ar.core.examples.java.helloar.model.LocationObject;
 import com.google.common.collect.ImmutableList;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import java.util.Map;
 
 public class DataProvider {
 
-    private static final List<String> PRODUCTS = ImmutableList.of("37902P1");
-    List<LocationObject> itineraries = new ArrayList<>();
-    OkHttpClient client = new OkHttpClient();
+    private static final Map<String, List<LocationObject>> ALL_PRODUCTS = new HashMap<>();
 
-    public List<LocationObject> getItineraries() {
-        return ImmutableList.of(
-                new LocationObject().setLat(37.66f).setLon(-122.54f).setName("Stanford").setRate(5).createLocationObject(),
-                new LocationObject().setLat(37.62f).setLon(-122.66f).setName("Pier 39").setRate(3).createLocationObject(),
-                new LocationObject().setLat(37.49f).setLon(-122.46f).setName("Golden Bridge").setRate(4).createLocationObject(),
-                new LocationObject().setLat(37.75f).setLon(-122.36f).setName("Viator SF").setRate(5).createLocationObject(),
-                new LocationObject().setLat(37.79f).setLon(-122.56f).setName("Napa Valley").setRate(5).createLocationObject()
+    static {
+        ALL_PRODUCTS.put(
+                "1337P1", ImmutableList.of(
+                        new LocationObject().setLat(37.8034f).setLon(-122.4491f).setName("Palace of Fine Arts").setRate(5).createLocationObject(),
+                        new LocationObject().setLat(37.7866f).setLon(-122.4011f).setName("SOMA Museum").setRate(3).createLocationObject(),
+                        new LocationObject().setLat(37.8075f).setLon(-122.4729f).setName("Golden Gate Bridge").setRate(4).createLocationObject(),
+                        new LocationObject().setLat(37.782587f).setLon(-122.398175f).setName("Viator SF").setRate(5).createLocationObject(),
+                        new LocationObject().setLat(37.808522f).setLon(-122.4095f).setName("Pier 39").setRate(5).createLocationObject()
+                )
         );
+        ALL_PRODUCTS.put(
+                "1337P2", ImmutableList.of(
+                        new LocationObject().setLat(37.426683f).setLon(-122.170524f).setName("Stanford Church").setRate(5).createLocationObject(),
+                        new LocationObject().setLat(37.434067f).setLon(-122.161124f).setName("Stanford Stadium").setRate(3).createLocationObject(),
+                        new LocationObject().setLat(37.441992f).setLon(-122.171453f).setName("Shopping Center").setRate(4).createLocationObject(),
+                        new LocationObject().setLat(37.427441f).setLon(-122.167037f).setName("Hoover Tower").setRate(5).createLocationObject()
+                )
+        );
+        ALL_PRODUCTS.put(
+                "1337P3", ImmutableList.of(
+                        new LocationObject().setLat(37.744f).setLon(-119.585342f).setName("Yosemite Visitor Center").setRate(5).createLocationObject(),
+                        new LocationObject().setLat(37.771829f).setLon(-119.580939f).setName("Upper Fall").setRate(3).createLocationObject(),
+                        new LocationObject().setLat(37.745581f).setLon(-119.533212f).setName("Half Dome").setRate(4).createLocationObject()
+                )
+        );
+    }
+
+    public List<LocationObject> getItineraries(String productCode) {
+        return ALL_PRODUCTS.get(productCode);
     }
 }

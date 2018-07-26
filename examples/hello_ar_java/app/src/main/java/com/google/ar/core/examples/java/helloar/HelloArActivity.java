@@ -25,6 +25,7 @@ import android.os.Bundle;
 import android.support.design.widget.BaseTransientBottomBar;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -34,7 +35,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -172,7 +175,7 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
                         ViewGroup.LayoutParams.FILL_PARENT,
                         ViewGroup.LayoutParams.FILL_PARENT));
 
-        TableLayout table = (TableLayout)HelloArActivity.this.findViewById(R.id.stops_list);
+        TableLayout table = HelloArActivity.this.findViewById(R.id.stops_list);
 
         Intent intent = getIntent();
         ItineraryObject itinerary = (ItineraryObject) intent.getExtras().getSerializable("ITINERARY");
@@ -182,18 +185,14 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
             LocationObject location = locations.get(i);
             int idx = i + 1;
 
-            TableRow row = (TableRow)LayoutInflater.from(HelloArActivity.this).inflate(R.layout.itinerary_row, null);
-            ((TextView)row.findViewById(R.id.venue_name)).setText(location.getName());
-            ((TextView)row.findViewById(R.id.locationIdx)).setText(String.valueOf(idx));
-//            row.findViewById(R.id.icon).setBackgroundResource(R.drawable.bluepin);
+            View row = LayoutInflater.from(HelloArActivity.this).inflate(R.layout.timeline_view, null);
+            ((TextView)row.findViewById(R.id.item_title)).setText(idx + ". " + location.getName());
+//            ((TextView)row.findViewById(R.id.item_subtitle)).setText(String.valueOf(idx));
+            ImageView transitIconHolder = ((ImageView)row.findViewById(R.id.transit_icon));
+            if (idx % 3 == 1) transitIconHolder.setImageResource(R.drawable.foots);
+            if (idx % 3 == 2) transitIconHolder.setImageResource(R.drawable.shuttle);
+            if (idx % 3 == 0) transitIconHolder.setImageResource(R.drawable.ship);
             table.addView(row);
-
-            if (i != locations.size() - 1) {
-                TableRow connectingRow = (TableRow)LayoutInflater.from(HelloArActivity.this).inflate(R.layout.itinerary_row, null);
-                connectingRow.findViewById(R.id.icon).setBackgroundResource(R.drawable.downarrow);
-                table.addView(connectingRow);
-            }
-
             locationScene.mLocationMarkers.add(
                     new LocationMarker(
                             location.getLon(),
@@ -201,11 +200,12 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
                             new AnnotationRenderer(String.valueOf(idx))));
         }
 
+
+
         Button toggleButton = findViewById(R.id.toggleDisplay);
         toggleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(HelloArActivity.this, "blah", Toast.LENGTH_SHORT).show();
                 View stopListView = HelloArActivity.this.findViewById(R.id.stops_list_holder);
                 stopListView.setVisibility(stopListView.getVisibility() == View.INVISIBLE ? View.VISIBLE : View.INVISIBLE);
             }

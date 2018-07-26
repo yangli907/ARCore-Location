@@ -4,32 +4,24 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.ar.core.examples.java.helloar.helpers.NetworkHelper;
 import com.google.ar.core.examples.java.helloar.model.ItineraryObject;
 import com.google.ar.core.examples.java.helloar.model.LocationObject;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -61,11 +53,7 @@ public class ItineraryLookupActivity extends AppCompatActivity {
         listViewAdapter = new ArrayAdapter<>(this, R.layout.menu_item_black_text);
         itineraryItemList.setAdapter(listViewAdapter);
 
-        map.put("1337P1",
-                new ItineraryObject()
-                        .setProductCode("1337P1")
-                        .setProductName("SF Downtown Tour")
-                        .setItineraryItems(new DataProvider().getItineraries()));
+        populateTestDataSet();
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -85,6 +73,36 @@ public class ItineraryLookupActivity extends AppCompatActivity {
         });
 
         loadContent();
+
+        ImageButton toggleButton = findViewById(R.id.submit_lookup);
+        toggleButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Spinner spinner = findViewById(R.id.productList);
+                Intent intent = new Intent(getBaseContext(), HelloArActivity.class);
+                intent.putExtra("PRODUCT_CODE", spinner.getSelectedItem().toString());
+                intent.putExtra("ITINERARY", map.get(spinner.getSelectedItem().toString()));
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void populateTestDataSet() {
+        map.put("1337P1",
+                new ItineraryObject()
+                        .setProductCode("1337P1")
+                        .setProductName("SF day tour")
+                        .setItineraryItems(new DataProvider().getItineraries("1337P1")));
+        map.put("1337P2",
+                new ItineraryObject()
+                        .setProductCode("1337P2")
+                        .setProductName("Stanford half-day tour")
+                        .setItineraryItems(new DataProvider().getItineraries("1337P2")));
+        map.put("1337P3",
+                new ItineraryObject()
+                        .setProductCode("1337P3")
+                        .setProductName("Yosemite National Park")
+                        .setItineraryItems(new DataProvider().getItineraries("1337P3")));
     }
 
     /** Called when the user taps the Send button */
@@ -101,8 +119,6 @@ public class ItineraryLookupActivity extends AppCompatActivity {
     }
 
     class RetrieveFeedTask extends AsyncTask<String, Void, Map<String, ItineraryObject>> {
-
-        private Exception exception;
 
         protected Map<String, ItineraryObject> doInBackground(String... urls) {
 
@@ -137,7 +153,6 @@ public class ItineraryLookupActivity extends AppCompatActivity {
                 return map;
 
             } catch (Exception e) {
-                this.exception = e;
 
                 return null;
             }
@@ -150,17 +165,6 @@ public class ItineraryLookupActivity extends AppCompatActivity {
                 spinnerAdapter.add(itinerary.getKey());
             }
 
-            ImageButton toggleButton = findViewById(R.id.submit_lookup);
-            toggleButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Spinner spinner = (Spinner)findViewById(R.id.productList);
-                    Intent intent = new Intent(getBaseContext(), HelloArActivity.class);
-                    intent.putExtra("PRODUCT_CODE", spinner.getSelectedItem().toString());
-                    intent.putExtra("ITINERARY", map.get(spinner.getSelectedItem().toString()));
-                    startActivity(intent);
-                }
-            });
 
 //            TextView itineraryDetailView = (TextView)findViewById(R.id.itinerary_info);
 //            itineraryDetailView.setText("");

@@ -5,10 +5,10 @@
 
     <FrameLayout
         android:id="@+id/stops_list_holder"
-        android:layout_width="200dp"
-        android:layout_height="450dp"
-        android:background="#a3a7a9"
-        android:alpha="0.7">
+        android:layout_width="220dp"
+        android:layout_height="match_parent"
+        android:background="#f9f9f9"
+        android:alpha="0.5">
         <TableLayout
             android:id="@+id/stops_list"
             android:layout_width="match_parent"
@@ -19,14 +19,17 @@
 
     <Button
         android:id="@+id/toggleDisplay"
-        android:layout_width="160dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="#08b0f2"
+        android:padding="10px"
+        android:textColor="#FFF"
         android:text="Toggle Display" />
 
     <RelativeLayout
         android:id="@+id/mapView_holder"
-        android:layout_width="160dp"
+        android:layout_width="120dp"
         android:layout_height="120dp"
         android:background="#a3a7a9"
         android:layout_alignParentBottom="true"
@@ -34,14 +37,12 @@
         android:alpha="0.7">
         <ImageView
             android:id="@+id/mapView"
-            android:layout_width="80dp"
-            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:paddingBottom="10dp"
-            android:paddingRight="10dp"
-            android:alpha=".4"
-            android:src="@drawable/bluepin"
+            android:alpha=".6"
+            android:src="@drawable/map_sample"
             />
     </RelativeLayout>
 

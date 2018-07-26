@@ -30,6 +30,7 @@ dependencies {
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.github.appoly:ARCore-Location:0.2.1'
     implementation 'com.google.guava:guava:25.0-android'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
     //implementation 'uk.co.appoly.arcorelocation:arcore-location-debug@aar'
 }
 

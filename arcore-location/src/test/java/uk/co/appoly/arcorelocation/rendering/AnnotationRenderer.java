@@ -171,11 +171,11 @@ public class AnnotationRenderer extends Renderer {
                                    String gText, String gDistance) {
 
         float shadow_size = 10f;
-        int font_size = 120;
+        int font_size = 40;
         int distance_font_size = 90;
-        int line_stroke = 15;
+        int line_stroke = 650;
         int vertical_line_length = 300;
-        int annotation_color = Color.rgb(225, 225, 225);
+        int annotation_color = Color.rgb(0, 100, 225);
         int shadow_color = Color.rgb(190,190,190);
 
 

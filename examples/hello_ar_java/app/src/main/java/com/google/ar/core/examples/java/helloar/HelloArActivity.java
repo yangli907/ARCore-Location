@@ -18,6 +18,7 @@ package com.google.ar.core.examples.java.helloar;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
@@ -49,6 +50,7 @@ import com.google.ar.core.Session;
 import com.google.ar.core.Trackable;
 import com.google.ar.core.TrackingState;
 import com.google.ar.core.examples.java.helloar.helpers.TapHelper;
+import com.google.ar.core.examples.java.helloar.model.ItineraryObject;
 import com.google.ar.core.examples.java.helloar.model.LocationObject;
 import com.google.ar.core.examples.java.helloar.rendering.BackgroundRenderer;
 import com.google.ar.core.examples.java.helloar.rendering.ObjectRenderer;
@@ -172,7 +174,10 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
 
         TableLayout table = (TableLayout)HelloArActivity.this.findViewById(R.id.stops_list);
 
-        List<LocationObject> locations = dataProvider.getLocationData();
+        Intent intent = getIntent();
+        ItineraryObject itinerary = (ItineraryObject) intent.getExtras().getSerializable("ITINERARY");
+        List<LocationObject> locations = itinerary.getItineraryItems();//dataProvider.getItineraries();
+
         for (int i = 0; i < locations.size(); i++) {
             LocationObject location = locations.get(i);
             int idx = i + 1;
@@ -196,7 +201,7 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
                             new AnnotationRenderer(String.valueOf(idx))));
         }
 
-        Button toggleButton = HelloArActivity.this.findViewById(R.id.toggleDisplay);
+        Button toggleButton = findViewById(R.id.toggleDisplay);
         toggleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

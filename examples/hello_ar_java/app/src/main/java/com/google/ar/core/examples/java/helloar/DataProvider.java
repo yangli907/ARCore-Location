@@ -1,13 +1,25 @@
 package com.google.ar.core.examples.java.helloar;
 
+import android.os.AsyncTask;
+import android.widget.Toast;
+
 import com.google.ar.core.examples.java.helloar.model.LocationObject;
 import com.google.common.collect.ImmutableList;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class DataProvider {
 
-    public List<LocationObject> getLocationData() {
+    private static final List<String> PRODUCTS = ImmutableList.of("37902P1");
+    List<LocationObject> itineraries = new ArrayList<>();
+    OkHttpClient client = new OkHttpClient();
+
+    public List<LocationObject> getItineraries() {
         return ImmutableList.of(
                 new LocationObject().setLat(37.66f).setLon(-122.54f).setName("Stanford").setRate(5).createLocationObject(),
                 new LocationObject().setLat(37.62f).setLon(-122.66f).setName("Pier 39").setRate(3).createLocationObject(),

@@ -1,6 +1,8 @@
 package com.google.ar.core.examples.java.helloar.model;
 
-public class LocationObject {
+import java.io.Serializable;
+
+public class LocationObject implements Serializable {
     private float lat;
     private float lon;
     private String name;

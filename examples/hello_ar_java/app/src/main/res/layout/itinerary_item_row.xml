@@ -12,7 +12,7 @@
         android:layout_height="80dp"
         android:layout_weight="1"
 
-        app:srcCompat="@drawable/ggb" />
+        app:srcCompat="@drawable/poi3" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +23,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="0dp"
             android:orientation="horizontal">
 
             <TextView
@@ -31,7 +32,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView"
                 android:textColor="#000"
                 android:textSize="16dp" />
 
@@ -39,21 +39,29 @@
                 android:id="@+id/speaker_icon"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/speaker"
                 android:layout_gravity="top"
-                android:scaleType="centerCrop"
                 android:layout_marginRight="10dp"
+                android:paddingBottom="5dp"
                 android:paddingLeft="5dp"
-                android:paddingBottom="5dp"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/speaker" />
         </LinearLayout>
-
+        <TableLayout
+            android:id="@+id/bubble_view"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/bubble_row"
+                android:orientation="horizontal"
+                android:layout_width="15dp" android:layout_height="15dp"/>
+        </TableLayout>
         <TextView
             android:id="@+id/itinerary_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="4dp"
             android:textColor="#737373"
-            android:textSize="12dp"
-            android:text="TextView" />
+            android:textSize="12dp" />
     </LinearLayout>
 </TableRow>

@@ -1,6 +1,7 @@
 package com.google.ar.core.examples.java.helloar;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -98,7 +99,15 @@ public class ItineraryLookupActivity extends AppCompatActivity {
 
                     View row = LayoutInflater.from(ItineraryLookupActivity.this).inflate(R.layout.itinerary_item_row, null);
                     ((TextView)row.findViewById(R.id.itinerary_name)).setText(location.getName());
-                    ((TextView)row.findViewById(R.id.itinerary_description)).setText(location.getType());
+//                    ((TextView)row.findViewById(R.id.itinerary_description)).setText(location.getType());
+                    int resID = getResources().getIdentifier(location.getType() , "drawable", getPackageName());
+                    Drawable drawable = getResources().getDrawable(resID);
+                    ((ImageView)row.findViewById(R.id.imageView)).setImageDrawable(drawable);
+                    TableLayout bubbleList = row.findViewById(R.id.bubble_view);
+                    for (int k = 0; k < location.getRate(); k++) {
+                        View bubble = LayoutInflater.from(ItineraryLookupActivity.this).inflate(R.layout.bubble, null);
+                        ((TableRow)bubbleList.findViewById(R.id.bubble_row)).addView(bubble);
+                    }
                     table.addView(row);
                 }
             }

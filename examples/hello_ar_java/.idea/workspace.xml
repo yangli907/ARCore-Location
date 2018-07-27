@@ -76,16 +76,71 @@
       <file leaf-file-name="ItineraryLookupActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/ItineraryLookupActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="52" column="43" lean-forward="false" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
+            <state relative-caret-position="202">
+              <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3869#3870#0" expanded="true" />
-                <element signature="e#3907#3908#0" expanded="true" />
-                <element signature="e#4031#4462#0" expanded="true" />
-                <element signature="e#4461#4462#0" expanded="true" />
-                <element signature="e#5518#5519#0" expanded="true" />
-                <element signature="e#5551#5552#0" expanded="true" />
+                <element signature="e#4580#4581#0" expanded="true" />
+                <element signature="e#4618#4619#0" expanded="true" />
+                <element signature="e#4742#5173#0" expanded="true" />
+                <element signature="e#5172#5173#0" expanded="true" />
+                <element signature="e#6229#6230#0" expanded="true" />
+                <element signature="e#6262#6263#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TableLayout.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/widget/TableLayout.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="73" column="19" lean-forward="false" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
+              <folding>
+                <marker date="1531448662469" expanded="false" signature="0:104" ph="/.../" />
+                <marker date="1531448662469" expanded="false" signature="138:368" ph="..." />
+                <marker date="1531448662469" expanded="true" signature="458:566" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="628:736" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="819:871" ph="{...}" />
+                <marker date="1531448662469" expanded="false" signature="904:915" ph=" { " />
+                <marker date="1531448662469" expanded="false" signature="951:957" ph=" }" />
+                <marker date="1531448662469" expanded="false" signature="998:1009" ph=" { " />
+                <marker date="1531448662469" expanded="false" signature="1045:1051" ph=" }" />
+                <marker date="1531448662469" expanded="true" signature="1115:1167" ph="{...}" />
+                <marker date="1531448662469" expanded="false" signature="1209:1220" ph=" { " />
+                <marker date="1531448662469" expanded="false" signature="1256:1262" ph=" }" />
+                <marker date="1531448662469" expanded="true" signature="1328:1380" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="1455:1507" ph="{...}" />
+                <marker date="1531448662469" expanded="false" signature="1562:1573" ph=" { " />
+                <marker date="1531448662469" expanded="false" signature="1609:1615" ph=" }" />
+                <marker date="1531448662469" expanded="true" signature="1694:1746" ph="{...}" />
+                <marker date="1531448662469" expanded="false" signature="1803:1814" ph=" { " />
+                <marker date="1531448662469" expanded="false" signature="1850:1856" ph=" }" />
+                <marker date="1531448662469" expanded="true" signature="1933:1985" ph="{...}" />
+                <marker date="1531448662469" expanded="false" signature="2041:2052" ph=" { " />
+                <marker date="1531448662469" expanded="false" signature="2088:2094" ph=" }" />
+                <marker date="1531448662469" expanded="false" signature="2131:2142" ph=" { " />
+                <marker date="1531448662469" expanded="false" signature="2178:2184" ph=" }" />
+                <marker date="1531448662469" expanded="false" signature="2232:2243" ph=" { " />
+                <marker date="1531448662469" expanded="false" signature="2279:2285" ph=" }" />
+                <marker date="1531448662469" expanded="true" signature="2367:2419" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="2512:2564" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="2640:2692" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="2767:2819" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="2898:2950" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="3037:3089" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="3170:3222" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="3339:3391" ph="{...}" />
+                <marker date="1531448662469" expanded="false" signature="3444:3455" ph=" { " />
+                <marker date="1531448662469" expanded="false" signature="3491:3497" ph=" }" />
+                <marker date="1531448662469" expanded="true" signature="3585:4826" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="3646:3773" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="3817:3944" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="4006:4133" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="4165:4292" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="4361:4488" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="4545:4672" ph="{...}" />
+                <marker date="1531448662469" expanded="true" signature="4760:4820" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -114,24 +169,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="R.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/ar/core/examples/java/helloar/R.java">
+      <file leaf-file-name="itinerary_item_row.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/itinerary_item_row.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#642499#0" expanded="true" />
-                <marker date="1532662104946" expanded="true" signature="27704:27727" ph="/**...*/" />
-              </folding>
+            <state relative-caret-position="430">
+              <caret line="64" column="38" lean-forward="false" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+              <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="itinerary_item_row.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/itinerary_item_row.xml">
+      <file leaf-file-name="bubble.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/bubble.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="34" column="40" lean-forward="false" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+            <state relative-caret-position="75">
+              <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -143,46 +198,25 @@
       <file leaf-file-name="DataProvider.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/DataProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+            <state relative-caret-position="195">
+              <caret line="18" column="57" lean-forward="false" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="itinerary_row.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/itinerary_row.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
+      <file leaf-file-name="poi3.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/poi3.png">
+          <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelloArActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/HelloArActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="502" column="25" lean-forward="false" selection-start-line="502" selection-start-column="21" selection-end-line="502" selection-end-column="25" />
-              <folding>
-                <element signature="e#8955#9293#0" expanded="true" />
-                <element signature="e#9292#9293#0" expanded="true" />
-                <element signature="e#20896#21145#0" expanded="true" />
-                <element signature="e#21144#21145#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navbar.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="navbar.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/navbar.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+            <state relative-caret-position="360">
+              <caret line="31" column="40" lean-forward="true" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -207,8 +241,8 @@
       <file leaf-file-name="itinerary_lookup.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/itinerary_lookup.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="30" column="42" lean-forward="false" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+            <state relative-caret-position="345">
+              <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -222,19 +256,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
         <option value="resourceFile" />
         <option value="Class" />
         <option value="layoutResourceFile_vertical" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>toast</find>
-      <find>blah</find>
-      <find>cardeleva</find>
-      <find>TimeLineModel</find>
       <find>shape</find>
       <find>adapter</find>
       <find>navbar</find>
@@ -258,12 +288,17 @@
       <find>tablelayout</find>
       <find>load</find>
       <find>select tri</find>
-      <find>black</find>
       <find>speaker</find>
+      <find>add(</find>
+      <find>black</find>
       <find>left</find>
+      <find>poi3</find>
+      <find>TextView</find>
+      <find>toggle dis</find>
     </findStrings>
     <replaceStrings>
       <replace>GLES20</replace>
+      <replace>3</replace>
       <replace>LocationObject</replace>
     </replaceStrings>
   </component>
@@ -2295,7 +2330,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/rounded_corner.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/model/LocationObject.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/model/ItineraryObject.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/DataProvider.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/login_page.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/popfromitem/utils/ArticlesUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/popfromitem/DetailsActivity.java" />
@@ -2311,20 +2345,23 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/line_bg_middle.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/line_bg_bottom.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/TimelineViewAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/navbar.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/topbar_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/topbar_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/menu_item_black_text.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/HelloArActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/ItineraryLookupActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/itinerary_lookup.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/timeline_view.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/bubble.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/ItineraryLookupActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/DataProvider.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/itinerary_item_row.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/itinerary_lookup.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/navbar.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="30" />
     <option name="y" value="23" />
     <option name="width" value="1586" />
     <option name="height" value="1027" />
@@ -2696,7 +2733,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1586" height="1027" extended-state="0" />
+    <frame x="30" y="23" width="1586" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2710,18 +2747,18 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48594928" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967785" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12981299" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2761276" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19948186" sideWeight="0.49433428" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37080193" sideWeight="0.4974093" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19948186" sideWeight="0.49392098" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37073708" sideWeight="0.4974093" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18199483" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22332233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19948186" sideWeight="0.5056657" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22332233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19948186" sideWeight="0.506079" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2763,30 +2800,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/ItineraryLookupActivity.java</url>
-          <line>191</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/ItineraryLookupActivity.java</url>
-          <line>187</line>
+          <line>196</line>
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/ItineraryLookupActivity.java</url>
-          <line>198</line>
+          <line>110</line>
           <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/ItineraryLookupActivity.java</url>
-          <line>160</line>
-          <properties />
-          <option name="timeStamp" value="18" />
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="19" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2800,37 +2825,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/core-1.2.0.aar/374807df63cf7801ddbc0ee4cb27247d/jars/classes.jar!/com/google/ar/core/Session.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/ARCore-Location-0.2.1.aar/5da8119fce9a30078059d391878e3427/jars/classes.jar!/uk/co/appoly/arcorelocation/LocationScene.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="147" column="5" lean-forward="true" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/rendering/PlaneRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="47" column="18" lean-forward="false" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/rendering/BackgroundRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="34" column="77" lean-forward="false" selection-start-line="34" selection-start-column="77" selection-end-line="34" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/icon_check.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -4221,25 +4215,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/navbar.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/com/google/ar/core/examples/java/helloar/R.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#642499#0" expanded="true" />
-            <marker date="1532662104946" expanded="true" signature="27704:27727" ph="/**...*/" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4248,10 +4228,10 @@
         <state relative-caret-position="276">
           <caret line="502" column="25" lean-forward="false" selection-start-line="502" selection-start-column="21" selection-end-line="502" selection-end-column="25" />
           <folding>
-            <element signature="e#8955#9293#0" expanded="true" />
-            <element signature="e#9292#9293#0" expanded="true" />
-            <element signature="e#20896#21145#0" expanded="true" />
-            <element signature="e#21144#21145#0" expanded="true" />
+            <element signature="e#8955#9293#0" expanded="false" />
+            <element signature="e#9292#9293#0" expanded="false" />
+            <element signature="e#20896#21145#0" expanded="false" />
+            <element signature="e#21144#21145#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -4277,41 +4257,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/ItineraryLookupActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="52" column="43" lean-forward="false" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3869#3870#0" expanded="true" />
-            <element signature="e#3907#3908#0" expanded="true" />
-            <element signature="e#4031#4462#0" expanded="true" />
-            <element signature="e#4461#4462#0" expanded="true" />
-            <element signature="e#5518#5519#0" expanded="true" />
-            <element signature="e#5551#5552#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/itinerary_lookup.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="30" column="42" lean-forward="false" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/DataProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/timeline_view.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -4323,10 +4268,130 @@
         <state />
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/android/widget/TableLayout.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="73" column="19" lean-forward="false" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
+          <folding>
+            <marker date="1531448662469" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1531448662469" expanded="false" signature="138:368" ph="..." />
+            <marker date="1531448662469" expanded="true" signature="458:566" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="628:736" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="819:871" ph="{...}" />
+            <marker date="1531448662469" expanded="false" signature="904:915" ph=" { " />
+            <marker date="1531448662469" expanded="false" signature="951:957" ph=" }" />
+            <marker date="1531448662469" expanded="false" signature="998:1009" ph=" { " />
+            <marker date="1531448662469" expanded="false" signature="1045:1051" ph=" }" />
+            <marker date="1531448662469" expanded="true" signature="1115:1167" ph="{...}" />
+            <marker date="1531448662469" expanded="false" signature="1209:1220" ph=" { " />
+            <marker date="1531448662469" expanded="false" signature="1256:1262" ph=" }" />
+            <marker date="1531448662469" expanded="true" signature="1328:1380" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="1455:1507" ph="{...}" />
+            <marker date="1531448662469" expanded="false" signature="1562:1573" ph=" { " />
+            <marker date="1531448662469" expanded="false" signature="1609:1615" ph=" }" />
+            <marker date="1531448662469" expanded="true" signature="1694:1746" ph="{...}" />
+            <marker date="1531448662469" expanded="false" signature="1803:1814" ph=" { " />
+            <marker date="1531448662469" expanded="false" signature="1850:1856" ph=" }" />
+            <marker date="1531448662469" expanded="true" signature="1933:1985" ph="{...}" />
+            <marker date="1531448662469" expanded="false" signature="2041:2052" ph=" { " />
+            <marker date="1531448662469" expanded="false" signature="2088:2094" ph=" }" />
+            <marker date="1531448662469" expanded="false" signature="2131:2142" ph=" { " />
+            <marker date="1531448662469" expanded="false" signature="2178:2184" ph=" }" />
+            <marker date="1531448662469" expanded="false" signature="2232:2243" ph=" { " />
+            <marker date="1531448662469" expanded="false" signature="2279:2285" ph=" }" />
+            <marker date="1531448662469" expanded="true" signature="2367:2419" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="2512:2564" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="2640:2692" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="2767:2819" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="2898:2950" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="3037:3089" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="3170:3222" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="3339:3391" ph="{...}" />
+            <marker date="1531448662469" expanded="false" signature="3444:3455" ph=" { " />
+            <marker date="1531448662469" expanded="false" signature="3491:3497" ph=" }" />
+            <marker date="1531448662469" expanded="true" signature="3585:4826" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="3646:3773" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="3817:3944" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="4006:4133" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="4165:4292" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="4361:4488" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="4545:4672" ph="{...}" />
+            <marker date="1531448662469" expanded="true" signature="4760:4820" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/bubble.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/poi3.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/DataProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" column="57" lean-forward="false" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/google/ar/core/examples/java/helloar/ItineraryLookupActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4580#4581#0" expanded="true" />
+            <element signature="e#4618#4619#0" expanded="true" />
+            <element signature="e#4742#5173#0" expanded="true" />
+            <element signature="e#5172#5173#0" expanded="true" />
+            <element signature="e#6229#6230#0" expanded="true" />
+            <element signature="e#6262#6263#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/itinerary_item_row.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="34" column="40" lean-forward="false" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+        <state relative-caret-position="430">
+          <caret line="64" column="38" lean-forward="false" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/glasses.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/itinerary_lookup.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/navbar.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="31" column="40" lean-forward="true" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
           <folding />
         </state>
       </provider>

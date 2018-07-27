@@ -34,6 +34,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -94,6 +95,7 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
     private GestureDetector mGestureDetector;
     private Snackbar mMessageSnackbar;
     private DisplayRotationHelper mDisplayRotationHelper;
+    private FrameLayout timelineView;
 
     private final BackgroundRenderer mBackgroundRenderer = new BackgroundRenderer();
 
@@ -102,6 +104,8 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
     private TapHelper tapHelper;
 
     private DataProvider dataProvider;
+
+    private boolean showTimeline;
 
     // Temporary matrix allocated here to reduce number of allocations for each frame.
     private final float[] mAnchorMatrix = new float[16];
@@ -129,6 +133,9 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
         mSurfaceView.setEGLConfigChooser(8, 8, 8, 8, 16, 0); // Alpha used for plane blending.
         mSurfaceView.setRenderer(this);
         mSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
+
+        timelineView = findViewById(R.id.stops_list_holder);
+        showTimeline = true;
 
         dataProvider = new DataProvider();
 
@@ -512,5 +519,40 @@ public class HelloArActivity extends AppCompatActivity implements GLSurfaceView.
                 mMessageSnackbar = null;
             }
         });
+    }
+
+    // slide the view from below itself to the current position
+    // TODO:
+    public void slideUp(View view){
+        view.setVisibility(View.VISIBLE);
+        TranslateAnimation animate = new TranslateAnimation(
+                view.getWidth(),                 // fromXDelta
+                0,                 // toXDelta
+                0,  // fromYDelta
+                0);                // toYDelta
+        animate.setDuration(500);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+    }
+
+    // slide the view from its current position to below itself
+    public void slideDown(View view){
+        TranslateAnimation animate = new TranslateAnimation(
+                0,                 // fromXDelta
+                view.getWidth(),                 // toXDelta
+                0,                 // fromYDelta
+                0); // toYDelta
+        animate.setDuration(500);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+    }
+
+    public void onSlideViewButtonClick(View view) {
+        if (showTimeline) {
+            slideDown(timelineView);
+        } else {
+            slideUp(timelineView);
+        }
+        showTimeline = !showTimeline;
     }
 }

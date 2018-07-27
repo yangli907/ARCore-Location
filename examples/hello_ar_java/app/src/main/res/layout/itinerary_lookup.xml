@@ -4,58 +4,45 @@
     android:id="@+id/itinerary_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f1fdf6"
+    android:background="#e3fbff"
     android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/qr_icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignTop="@+id/productList"
-        android:layout_toEndOf="@+id/submit_lookup"
-        android:elevation="0dp"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/qrcode" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#326e62"
+        android:visibility="visible" />
+
 
     <ImageButton
         android:id="@+id/submit_lookup"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignTop="@+id/productList"
-        android:layout_toEndOf="@+id/productList"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
         android:scaleType="centerInside"
         app:srcCompat="@drawable/icon_check" />
 
-    <Spinner
-        android:id="@+id/productList"
-        android:layout_width="195dp"
-        android:layout_height="45dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="81dp"
-        android:layout_marginTop="185dp"
-        android:textColor="#000"
-        android:background="@drawable/rounded_corner"/>
+    <TableLayout
+        android:id="@+id/itinerary_info_new"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingTop="80dp"
+        android:paddingLeft="-20dp"
+    />
 
-    <ListView
-        android:id="@+id/itinerary_info"
-        android:layout_width="294dp"
-        android:layout_height="276dp"
-        android:layout_alignStart="@+id/productList"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/rounded_corner"
-        android:textColor="#000"
+    <!--<ListView-->
+        <!--android:id="@+id/itinerary_info"-->
+        <!--android:layout_width="296dp"-->
+        <!--android:layout_height="187dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginBottom="109dp"-->
+        <!--android:background="@drawable/rounded_corner"-->
+        <!--android:text="TextView"-->
 
-        android:text="TextView" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="76dp"
-        android:layout_height="63dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="82dp"
-        app:srcCompat="@android:drawable/star_big_on" />
+        <!--android:textColor="#000" />-->
 
 </RelativeLayout>

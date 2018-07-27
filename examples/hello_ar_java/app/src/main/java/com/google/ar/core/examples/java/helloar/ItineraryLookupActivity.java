@@ -4,12 +4,21 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 import com.google.ar.core.examples.java.helloar.helpers.NetworkHelper;
 import com.google.ar.core.examples.java.helloar.model.ItineraryObject;
@@ -44,25 +53,53 @@ public class ItineraryLookupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.itinerary_lookup);
 
-        final Spinner spinner = findViewById(R.id.productList);
+        //getting the toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+
+        //setting the title
+        toolbar.setTitle("Your Tours");
+
+        //placing toolbar in place of actionbar
+        toolbar.setNavigationIcon(R.drawable.bruce_profile);
+
+        setSupportActionBar(toolbar);
+
         spinnerAdapter = new ArrayAdapter<>(this, R.layout.menu_item_black_text);
         spinnerAdapter.setDropDownViewResource(R.layout.menu_item_black_text);
-        spinner.setAdapter(spinnerAdapter);
 
-        final ListView itineraryItemList = findViewById(R.id.itinerary_info);
-        listViewAdapter = new ArrayAdapter<>(this, R.layout.menu_item_black_text);
-        itineraryItemList.setAdapter(listViewAdapter);
+//        final ListView itineraryItemList = findViewById(R.id.itinerary_info);
+//        listViewAdapter = new ArrayAdapter<>(this, R.layout.menu_item_black_text);
+//        itineraryItemList.setAdapter(listViewAdapter);
 
         populateTestDataSet();
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        loadContent();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.topbar_menu, menu);
+
+        View tripList = menu.findItem(R.id.menuTrips).getActionView();
+        final TableLayout table = findViewById(R.id.itinerary_info_new);
+        final Spinner tripSpinner = (Spinner) tripList;
+        tripSpinner.setAdapter(spinnerAdapter);
+
+        tripSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String productCode = (String) spinner.getItemAtPosition(i);
+                String productCode = (String) tripSpinner.getItemAtPosition(i);
                 ItineraryObject itineraryObject = map.get(productCode);
-                listViewAdapter.clear();
+//                listViewAdapter.clear();
+                table.removeAllViews();
                 for (LocationObject location : itineraryObject.getItineraryItems()) {
-                    listViewAdapter.add(location.getName());
+//                    listViewAdapter.add(location.getName());
+
+                    View row = LayoutInflater.from(ItineraryLookupActivity.this).inflate(R.layout.itinerary_item_row, null);
+                    ((TextView)row.findViewById(R.id.itinerary_name)).setText(location.getName());
+                    ((TextView)row.findViewById(R.id.itinerary_description)).setText(location.getType());
+                    table.addView(row);
                 }
             }
 
@@ -72,19 +109,17 @@ public class ItineraryLookupActivity extends AppCompatActivity {
             }
         });
 
-        loadContent();
-
         ImageButton toggleButton = findViewById(R.id.submit_lookup);
         toggleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Spinner spinner = findViewById(R.id.productList);
                 Intent intent = new Intent(getBaseContext(), HelloArActivity.class);
-                intent.putExtra("PRODUCT_CODE", spinner.getSelectedItem().toString());
-                intent.putExtra("ITINERARY", map.get(spinner.getSelectedItem().toString()));
+                intent.putExtra("PRODUCT_CODE", tripSpinner.getSelectedItem().toString());
+                intent.putExtra("ITINERARY", map.get(tripSpinner.getSelectedItem().toString()));
                 startActivity(intent);
             }
         });
+        return true;
     }
 
     private void populateTestDataSet() {
@@ -129,7 +164,7 @@ public class ItineraryLookupActivity extends AppCompatActivity {
                         .url(url)
                         .build();
 
-                Response response = httpClient.newCall(request).execute();
+                Response response = null;//httpClient.newCall(request).execute();
 
                 String jsonData = response.body().string();
                 JSONObject jsonObject = new JSONObject(jsonData);
@@ -154,7 +189,7 @@ public class ItineraryLookupActivity extends AppCompatActivity {
 
             } catch (Exception e) {
 
-                return null;
+                return map;
             }
         }
 

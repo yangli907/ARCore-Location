@@ -49,16 +49,6 @@
                 android:textColor="#454444"
                 android:textSize="13dp" />
 
-            <ImageView
-                android:id="@+id/speaker_icon"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/speaker"
-                android:layout_gravity="top"
-                android:scaleType="centerCrop"
-                android:layout_marginRight="10dp"
-                android:paddingLeft="5dp"
-                android:paddingBottom="5dp"/>
         </LinearLayout>
 
         <ImageView
